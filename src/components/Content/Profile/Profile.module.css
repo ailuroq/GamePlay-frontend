@@ -1,0 +1,26 @@
+.profile {
+    display: grid;
+    grid-gap: 1em;
+    align-items: start;
+    grid-template-columns: 3fr 7fr;
+}
+
+.avatar_column {
+    background: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 170px;
+    margin: 0 auto;
+
+}
+.navbar {
+    margin-top: 10px;
+}
+.avatar {
+    margin: 0 auto;
+    max-width: 170px;
+}
+
+.thin_column {
+
+}

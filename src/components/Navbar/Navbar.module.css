@@ -1,0 +1,29 @@
+.navbar {
+    display: grid;
+    grid-area: nav;
+    grid-gap: 0;
+    background: #edeef0;
+}
+
+.menu {
+    margin-top: 0;
+}
+
+.menu li {
+    width: 178px;
+    height: 30px;
+    list-style-type: none;
+    padding-left: 8px;
+}
+
+.menu li:hover {
+    background: #dce1e6;
+    border-radius: 4px;
+}
+
+.menu__item a {
+    display: block;
+    text-decoration: none;
+    color: #777777;
+    font-size: 20px;
+}
