@@ -22,7 +22,37 @@ const Profile = () => {
                     <Navbar/>
                 </div>
             </div>
-            <div></div>
+            <div className={styles.wide_column}>
+                <div>
+                    <div className={styles.user_info}>
+                        <div className={styles.user_info_top}>
+                            <p>Username</p> {/*Username from the server*/}
+                        </div>
+                        <div>
+                            <p>Last online</p> {/*Last online time from the server*/}
+                        </div>
+                    </div>
+                    <div className={styles.favorite_games}>
+                        <div className={styles.favorite_games_text}>
+                            <p>Favorite games</p>
+                        </div>
+                        <div className={styles.games_pict}>
+                            {/*Here is mapped props from redux (first 6),
+                            now just as example 6 images*/}
+                            <div><img src={avatar} alt=""/></div>
+                            <div><img src={avatar} alt=""/></div>
+                            <div><img src={avatar} alt=""/></div>
+                            <div><img src={avatar} alt=""/></div>
+                            <div><img src={avatar} alt=""/></div>
+                            <div><img src={avatar} alt=""/></div>
+                        </div>
+                    </div>
+                    <div className={styles.achievements}>
+                        {/*Here is mapped props from redux (last N achievements)*/}
+                        <div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

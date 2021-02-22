@@ -2,7 +2,7 @@
     display: grid;
     grid-gap: 1em;
     align-items: start;
-    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 1fr 8fr;
 }
 
 .avatar_column {
@@ -23,4 +23,41 @@
 
 .thin_column {
 
+}
+
+.user_info {
+    display: grid;
+    grid-gap: 1em;
+    align-items: start;
+    grid-template-columns: 10fr 2fr;
+    background: #fff;
+}
+
+.user_info_top {
+    padding-left: 15px;
+}
+
+.favorite_games {
+    background: #fff;
+    padding: 0 15px;
+}
+
+.favorite_games_text p{
+    padding: 15px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+}
+
+.games_pict {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.games_pict img {
+    max-width: 70px;
+}
+
+.achievements {
+    background: #fff;
 }

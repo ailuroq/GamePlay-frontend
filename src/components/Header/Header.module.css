@@ -11,12 +11,11 @@
     justify-self: end;
 }
 .header_container {
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.8fr 1.4fr 3.5fr;
     justify-items: center;
-
 
 }
 

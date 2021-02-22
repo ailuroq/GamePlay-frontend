@@ -6,11 +6,12 @@
 }
 
 .menu {
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .menu li {
-    width: 178px;
+    width: 176px;
     height: 30px;
     list-style-type: none;
     padding-left: 8px;
