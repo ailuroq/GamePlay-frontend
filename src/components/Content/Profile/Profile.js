@@ -6,17 +6,26 @@ import {useParams} from "react-router-dom";
 import getProfile from "../../../actions/profile";
 import avatar from "../../../static/avatar.jpeg"
 import Navbar from "../../Navbar/Navbar";
+import {API_URL} from "../../../constants/urlConstants";
 
 
 const Profile = () => {
     const {user: currentUser} = useSelector((state)=> state.auth)
     const {username} = useParams()
 
+    const dispatch = useDispatch()
+
+    useEffect(()=> {
+        dispatch(getProfile(username))
+    }, [dispatch, username])
+
+    const {profileData} = useSelector(state => state.profile)
+
     return (
         <div className={styles.profile}>
             <div className={styles.thin_column}>
                 <div className={styles.avatar_column}>
-                    <img src={avatar} className={styles.avatar} alt=""/>
+                    <img src={API_URL + 'uploads/' + profileData.avatarName} className={styles.avatar} alt=""/>
                 </div>
                 <div className={styles.navbar}>
                     <Navbar/>
@@ -26,10 +35,16 @@ const Profile = () => {
                 <div>
                     <div className={styles.user_info}>
                         <div className={styles.user_info_top}>
-                            <p>Username</p> {/*Username from the server*/}
+                            <p>{profileData.username}</p> {/*Username from the server*/}
                         </div>
                         <div>
                             <p>Last online</p> {/*Last online time from the server*/}
+                        </div>
+                    </div>
+                    <div className={styles.basic_info}>
+                        <div className={styles.basic_info_top}>
+                            <p>Basic info</p>
+                            <p>Email: {profileData.email}</p>
                         </div>
                     </div>
                     <div className={styles.favorite_games}>
