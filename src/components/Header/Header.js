@@ -14,7 +14,7 @@ const Header = () => {
         <div className={styles.header}>
             <div className={styles.header_container}>
                 <div className={styles.logo}>
-                    <Link>LOGOTYPE</Link>
+                    <Link to='/'>LOGOTYPE</Link>
                 </div>
                 <div className={styles.search}>
                     <input placeholder="Find games" type="text"/>
@@ -24,7 +24,7 @@ const Header = () => {
                         {currentUser ? (
                             <div>
                                 <li className="nav-item">
-                                    <Link to={"/" + currentUser.username} className="nav-link">
+                                    <Link to={"/u/" + currentUser.username} className="nav-link">
                                         {currentUser.username}
                                     </Link>
                                 </li>

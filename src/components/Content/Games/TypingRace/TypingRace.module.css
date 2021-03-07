@@ -1,0 +1,30 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 6.5fr;
+}
+
+.logotype p {
+    font-size: 24px;
+    margin: 10px 0 0 30px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 950px;
+}
+
+.menu_block {
+    justify-self: right;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 25px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 350px;
+}

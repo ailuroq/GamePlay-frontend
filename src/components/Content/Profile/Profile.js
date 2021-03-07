@@ -25,7 +25,9 @@ const Profile = () => {
         <div className={styles.profile}>
             <div className={styles.thin_column}>
                 <div className={styles.avatar_column}>
+                    {profileData.avatarName &&
                     <img src={API_URL + 'uploads/' + profileData.avatarName} className={styles.avatar} alt=""/>
+                    }
                 </div>
                 <div className={styles.navbar}>
                     <Navbar/>
