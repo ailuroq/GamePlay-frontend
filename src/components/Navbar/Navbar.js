@@ -20,9 +20,6 @@ const Navbar = () => {
                     <li className={ styles.menu__item}>
                         <Link to={"/" + currentUser.username + "/friends"}>Friends</Link>
                     </li>
-                    <li className={styles.menu__item}>
-                        <Link to={"/" + currentUser.username + "/statistics"}>Statistics</Link>
-                    </li>
                 </ul>
             </div>}
         </div>

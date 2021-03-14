@@ -34,3 +34,42 @@
     color: #2e7ecb;
     font-weight: bold;
 }
+
+.snakeGameEnv {
+    margin-top: 20px;
+}
+
+.additional-links ul {
+    margin: 10px auto;
+}
+
+.additional-links li {
+    display: inline;
+    margin-left: 30px;
+}
+
+.additional-links a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.table_header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+.table_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #b5afaf;
+    justify-items: center;
+}
+
+.table_item img {
+    width: 20px;
+}
+
+.pagination{
+    display: grid;
+    justify-items: center;
+    margin-top: 20px;
+}

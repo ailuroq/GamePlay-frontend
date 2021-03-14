@@ -13,7 +13,7 @@ const  GameOver = (props) => {
                 <div id='GameOverText'>GAME OVER</div>
                 <div>Your score: {props.score}</div>
                 <div>
-                    {props.newHighScore ? 'New local ' : 'Local '}high score:{' '}
+                    {props.newHighScore ? 'New high' : 'High '} score:{' '}
                     {props.highScore}
                 </div>
                 <div id='PressSpaceText'>Press Space to restart</div>

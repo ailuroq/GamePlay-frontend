@@ -1,6 +1,9 @@
 import React from 'react'
 import './SnakeGame.css'
 import GameOver from "./GameOver";
+import {connect} from "react-redux";
+import {sendSnakeGameOverInfo} from "../../../../actions/snake-game";
+import store from "../../../../store";
 
 class SnakeGame extends React.Component {
     constructor(props) {
@@ -23,12 +26,13 @@ class SnakeGame extends React.Component {
             snakeColor: this.props.snakeColor || this.getRandomColor(),
             appleColor: this.props.appleColor || this.getRandomColor(),
             score: 0,
-            highScore: Number(localStorage.getItem('snakeHighScore')) || 0,
+            highScore: Number(props.maxScore),
             newHighScore: false,
         }
     }
 
     componentDidMount() {
+        console.log('hScore ' + this.state.highScore)
         this.initGame()
         window.addEventListener('keydown', this.handleKeyDown)
         this.gameLoop()
@@ -237,8 +241,10 @@ class SnakeGame extends React.Component {
         let snake = this.state.snake
 
         for (let i = 1; i < snake.length; i++) {
-            if (snake[0].Xpos === snake[i].Xpos && snake[0].Ypos === snake[i].Ypos)
-                this.setState({ isGameOver: true })
+            if (snake[0].Xpos === snake[i].Xpos && snake[0].Ypos === snake[i].Ypos) {
+                this.setState({isGameOver: true})
+                store.dispatch(sendSnakeGameOverInfo(this.state.highScore, this.state.score))
+            }
         }
     }
 
@@ -410,4 +416,4 @@ class SnakeGame extends React.Component {
     }
 }
 
-export default SnakeGame
+export default connect(null, {sendGameOverInfo: sendSnakeGameOverInfo})(SnakeGame)
