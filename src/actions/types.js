@@ -8,3 +8,7 @@ export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 
 export const GET_PROFILE = "GET_PROFILE"
+export const GET_FRIENDS = "GET_FRIENDS"
+export const DELETE_FRIEND = "DELETE_FRIEND"
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
+export const GET_ALL_FRIENDS = "GET_ALL_FRIENDS"
