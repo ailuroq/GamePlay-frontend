@@ -8,6 +8,8 @@ import SnakeGameEnvironment from "./Games/SnakeGame/SnakeGameEnvironment";
 import MainPage from "./Games/TypingRace/MainPage";
 import RatingTable from "./Games/SnakeGame/RatingTable";
 import styles from "./Content.module.css"
+import Friends from "./Friends/Friends";
+import Subscribers from "./Subscribers/Subscribers";
 
 const Content = () => {
     return (
@@ -20,6 +22,8 @@ const Content = () => {
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/u/:username" component={Profile}/>
+                    <Route path="/:username/friends" component={Friends}/>
+                    <Route path="/:username/subscribers" component={Subscribers}/>
                     <Route path='/snake-game/rating' component={RatingTable}/>
                 </div>
             </Switch>
