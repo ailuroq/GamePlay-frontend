@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect} from "react";
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import styles from "./Profile.module.css"
@@ -47,6 +47,7 @@ const Profile = () => {
                         <div className={styles.basic_info_top}>
                             <p>Basic info</p>
                             <p>Email: {profileData.email}</p>
+                            <Link to={"/" + currentUser.username + "/subscribers"}>Subscribers: {profileData.subscribers.length}</Link>
                         </div>
                     </div>
                     <div className={styles.favorite_games}>

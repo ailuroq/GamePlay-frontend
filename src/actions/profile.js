@@ -1,4 +1,4 @@
-import {GET_PROFILE, SET_MESSAGE} from "./types";
+import {GET_PROFILE} from "./types";
 import axios from "axios";
 import authHeader from "../services/auth-header";
 import {API_URL} from "../constants/urlConstants";
