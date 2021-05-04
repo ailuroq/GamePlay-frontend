@@ -10,6 +10,7 @@ import RatingTable from "./Games/SnakeGame/RatingTable";
 import styles from "./Content.module.css"
 import Friends from "./Friends/Friends";
 import Subscribers from "./Subscribers/Subscribers";
+import User from "./User/User";
 
 const Content = () => {
     return (
@@ -25,6 +26,7 @@ const Content = () => {
                     <Route path="/:username/friends" component={Friends}/>
                     <Route path="/:username/subscribers" component={Subscribers}/>
                     <Route path='/snake-game/rating' component={RatingTable}/>
+                    <Route path='/currentUser/:username' component={User}/>
                 </div>
             </Switch>
         </div>
