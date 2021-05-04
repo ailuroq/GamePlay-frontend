@@ -1,54 +1,59 @@
 import {useDispatch, useSelector} from "react-redux";
-import {getAllUserFriends, getFriends} from "../../../actions/friends";
+import {deleteUserFriend, getFriends} from "../../../actions/friends";
 import React, {useEffect, useState} from "react";
-import Friend from "./Friend/Friend";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import {Search} from "@material-ui/icons";
-import "./Friends.module.css"
-import {setCurrentPage} from "../../../reducers/profile";
+import styles from "./Friends.module.css"
+import {setCurrentPageFriends} from "../../../reducers/profile";
 import {createPages} from "./createPages";
+import Avatar from "@material-ui/core/Avatar";
+import {API_URL} from "../../../constants/urlConstants";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     searchInput: {
-        width: '75%'
+        width: '75%',
+        marginBottom: 10
+    },
+    large: {
+        width: theme.spacing(12),
+        height: theme.spacing(12),
+        marginTop: 15,
+        marginLeft: 15
     },
 }))
 
 const Friends = () => {
 
     const classes = useStyles();
-    const {user: currentUser} = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const friends = useSelector(state => state.profile.friends)
-    const currentPage = useSelector(state => state.profile.currentPage)
-    const perPage = useSelector(state => state.profile.perPage)
-    const numberOfPages = useSelector(state => state.profile.numberOfPages)
-    const allFriends = useSelector(state => state.profile.allFriends)
+    const numberOfPagesFriends = useSelector(state => state.profile.numberOfPagesFriends)
+    const currentPageFriends = useSelector(state => state.profile.currentPageFriends)
+
     const {username} = useParams()
     const [value, setValue] = useState('')
     const pages = []
-    createPages(pages, numberOfPages, currentPage)
+    createPages(pages, numberOfPagesFriends, currentPageFriends)
 
     useEffect(() => {
-        dispatch(getFriends(username, currentPage, perPage))
-    }, [dispatch, currentPage, friends, username, perPage])
+        dispatch(getFriends(username, currentPageFriends))
+    }, [dispatch, currentPageFriends, username])
 
-    useEffect(() => {
-        dispatch(getAllUserFriends(username))
-    })
-
-    const filteredUsers = allFriends.filter(user => {
-        return user.username.toLowerCase().includes(value.toLowerCase())
-    })
+    const handleDelete = friendUsername => {
+        dispatch(deleteUserFriend(friendUsername, username))
+    };
 
     return (
         <div>
             <TextField
                 variant="outlined"
-                label="Search Friends"
+                label="Поиск друзей"
                 className={classes.searchInput}
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
@@ -61,21 +66,35 @@ const Friends = () => {
                 }}
             />
             {
-                !value
-                    ?
-                    friends.map(friend =>
-                        <Friend friend={friend} key={friend.id}/>
-                    )
-                    :
-                    filteredUsers.map(friend =>
-                        <Friend friend={friend} key={friend.id}/>
-                    )
+                friends.map((friend, index) => {
+                        return (
+                            <Card className={styles.root} key={index}>
+                                <Avatar src={API_URL + 'uploads/' + friend.avatarName}
+                                        className={classes.large}/>
+                                <div className={styles.username}>
+                                    <Typography component="h5" variant="h6">
+                                        <Link to={"/currentUser/" + friend.username}>{friend.username}</Link>
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {friend.email}
+                                    </Typography>
+                                    <Button size="small" color="primary">
+                                        Пригласить в игру
+                                    </Button>
+                                    <Button size="small" color="primary" onClick={() => handleDelete(friend.username)}>
+                                        Удалить из друзей
+                                    </Button>
+                                </div>
+                            </Card>
+                        )
+                    }
+                )
             }
-            <div className="pages">
+            <div className={styles.pages}>
                 {pages.map((page, index) => <span
                     key={index}
-                    className={currentPage === page ? "current-page" : "page"}
-                    onClick={() => dispatch(setCurrentPage(page))}>{page}</span>)}
+                    className={currentPageFriends === page ? styles.currentpage : styles.page}
+                    onClick={() => dispatch(setCurrentPageFriends(page))}>{page}</span>)}
             </div>
         </div>
     )

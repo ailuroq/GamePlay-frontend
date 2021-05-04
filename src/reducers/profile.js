@@ -1,11 +1,7 @@
 import {
-    ACCEPT_SUBSCRIBER,
-    DELETE_FRIEND,
-    GET_ALL_FRIENDS,
     GET_FRIENDS,
     GET_PROFILE,
-    GET_SUBSCRIBERS,
-    SET_CURRENT_PAGE
+    GET_SUBSCRIBERS, SET_CURRENT_PAGE_FRIENDS, SET_CURRENT_PAGE_SUBSCRIBERS,
 } from "../actions/types";
 
 const initialState = {
@@ -14,13 +10,16 @@ const initialState = {
         username: "",
         subscribers: []
     },
+
     friends: [],
-    allFriends: [],
-    currentPage : 1,
-    perPage: 5,
-    totalCount : 0,
-    numberOfPages: 0,
-    subscribers: []
+    currentPageFriends: 1,
+    totalCountFriends: 0,
+    numberOfPagesFriends: 0,
+
+    subscribers: [],
+    currentPageSubscribers: 1,
+    totalCountSubscribers: 0,
+    numberOfPagesSubscribers: 0,
 }
 export default function profile(state = initialState, action) {
     switch (action.type) {
@@ -28,53 +27,53 @@ export default function profile(state = initialState, action) {
             return {
                 ...state,
                 profileData: action.payload,
-                totalCount: action.payload.totalCount,
-                numberOfPages: action.payload.numberOfPages
             }
         case GET_FRIENDS:
             return {
                 ...state,
                 friends: action.payload.friends,
-                totalCount: action.payload.totalCount,
-                numberOfPages: action.payload.numberOfPages
+                totalCountFriends: action.payload.totalCount,
+                numberOfPagesFriends: action.payload.numberOfPages
             }
-        case DELETE_FRIEND:
+        case SET_CURRENT_PAGE_FRIENDS:
             return {
                 ...state,
-                friends: action.payload.friends
-            }
-        case SET_CURRENT_PAGE:
-            return {
-                ...state,
-                currentPage: action.payload
-            }
-        case GET_ALL_FRIENDS:
-            return {
-                ...state,
-                allFriends: action.payload
+                currentPageFriends: action.payload
             }
         case GET_SUBSCRIBERS:
             return {
                 ...state,
                 subscribers: action.payload.subscribers,
-                totalCount: action.payload.totalCount,
-                numberOfPages: action.payload.numberOfPages
+                totalCountSubscribers: action.payload.totalCount,
+                numberOfPagesSubscribers: action.payload.numberOfPages
             }
-        case ACCEPT_SUBSCRIBER:
+        case SET_CURRENT_PAGE_SUBSCRIBERS:
             return {
                 ...state,
-                subscribers: action.payload.subscribers,
-                totalCount: action.payload.totalCount,
-                numberOfPages: action.payload.numberOfPages
+                currentPageSubscribers: action.payload
             }
         default:
             return state
     }
 }
 
-export const setFriends = (friends) => ({type: GET_FRIENDS, payload: friends})
-export const deleteFriend = (friends) => ({type: DELETE_FRIEND, payload: friends})
-export const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, payload: page})
-export const getAllFriends = (allFriends) => ({type: GET_ALL_FRIENDS, payload: allFriends})
-export const setSubscribers = (subscribers) => ({type: GET_SUBSCRIBERS, payload: subscribers})
-export const acceptSubscriber = (subscriber) => ({type: ACCEPT_SUBSCRIBER, payload: subscriber})
+export const setFriends = (friends) => ({
+    type: GET_FRIENDS,
+    payload: friends
+})
+
+export const setCurrentPageFriends = (page) => ({
+    type: SET_CURRENT_PAGE_FRIENDS,
+    payload: page
+})
+
+export const setSubscribers = (subscribers) => ({
+    type: GET_SUBSCRIBERS,
+    payload: subscribers
+})
+
+export const setCurrentPageSubscribers = (page) => ({
+    type: SET_CURRENT_PAGE_SUBSCRIBERS,
+    payload: page
+})
+

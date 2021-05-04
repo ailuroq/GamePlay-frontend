@@ -23,11 +23,11 @@
     display: flex;
 }
 
-.round {
-    height: 100px;
-    width: 100px;
-    margin-top: 13px;
+.large {
+    margin-top: 15px;
     margin-left: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 .username {

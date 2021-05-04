@@ -1,17 +1,19 @@
 import axios from "axios";
-import {acceptSubscriber, setSubscribers} from "../reducers/profile";
+import {setCurrentPageSubscribers, setSubscribers} from "../reducers/profile";
 import authHeader from "../services/auth-header";
 
-export const getSubscribers = (username, page, limit) => {
+export const getSubscribers = (username, page) => {
     return async (dispatch) => {
-        const response = await axios.get(`http://localhost:8000/${username}/subscribers?page=${page}&limit=${limit}`)
+        const response = await axios.get(`http://localhost:8000/${username}/subscribers?page=${page}`)
         dispatch(setSubscribers(response.data))
     }
 }
 
-export const acceptSubscriberAction = (username) => {
+export const acceptSubscriberAction = (subscriberUsername, username) => {
     return async (dispatch) => {
-        const response = await axios.post(`http://localhost:8000/${username}/acceptFriendRequest`, null, {headers: authHeader()})
-        dispatch(acceptSubscriber(response.data))
+        await axios.post(`http://localhost:8000/${subscriberUsername}/acceptFriendRequest`, null, {headers: authHeader()})
+        const response = await axios.get(`http://localhost:8000/${username}/subscribers?page=${1}`)
+        dispatch(setSubscribers(response.data))
+        dispatch(setCurrentPageSubscribers(1))
     }
 }
