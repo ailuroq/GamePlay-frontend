@@ -27,14 +27,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6b1c0154-fb7b-42ff-860f-042cf4ae60ce" name="Default Changelist" comment="Friends">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/getUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Content/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content/Friends/Friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content/Friends/Friends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Content/User/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content/User/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,12 +66,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../БД/Pharmacy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../БД/pharmacy-front" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -107,7 +115,12 @@
       <workItem from="1616182594940" duration="9195000" />
       <workItem from="1616195727945" duration="2753000" />
       <workItem from="1616240875318" duration="19250000" />
-      <workItem from="1616271385715" duration="2641000" />
+      <workItem from="1616271385715" duration="3410000" />
+      <workItem from="1620068337046" duration="717000" />
+      <workItem from="1620120358369" duration="27148000" />
+      <workItem from="1620230417764" duration="8639000" />
+      <workItem from="1620663967229" duration="10181000" />
+      <workItem from="1620681214351" duration="3433000" />
     </task>
     <task id="LOCAL-00001" summary="Friends">
       <created>1616258591497</created>
@@ -130,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616271153482</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Friends">
+      <created>1616274308770</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616274308770</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Friends">
+      <created>1620155846634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620155846634</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +174,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Friends" />
+                        <option value="friendsRequests" />
                       </list>
                     </value>
                   </entry>
@@ -163,87 +190,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Friends" />
     <option name="LAST_COMMIT_MESSAGE" value="Friends" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615474962159">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615474962159" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1616272606030">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616272606030" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1616273908018">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616273908018" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1616272867949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616272867949" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1616272867949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616272867949" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1616272867949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616272867949" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1616272867949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616272867949" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.2.bottom" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.2.center" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.2.left" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.2.right" timestamp="1616104744099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744099" />
-    <state width="1899" height="348" key="GridCell.Tab.3.bottom" timestamp="1616104744100">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744100" />
-    <state width="1899" height="348" key="GridCell.Tab.3.center" timestamp="1616104744100">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744100" />
-    <state width="1899" height="348" key="GridCell.Tab.3.left" timestamp="1616104744100">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744100" />
-    <state width="1899" height="348" key="GridCell.Tab.3.right" timestamp="1616104744100">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616104744100" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616249178242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616249178242" />
   </component>
 </project>
