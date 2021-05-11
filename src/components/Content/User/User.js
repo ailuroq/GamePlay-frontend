@@ -58,9 +58,6 @@ const User = () => {
             {
                 isFriend === 'friend' &&
                 <div>
-                    <Button size="small" color="primary">
-                        Пригласить в игру
-                    </Button>
                     <Button size="small" color="primary"
                             onClick={() => handleDelete(profileData.username)}
                     >

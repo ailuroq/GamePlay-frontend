@@ -7,7 +7,6 @@ const RatingTableItem = (props) => {
             <p>{props.username}</p>
             <p>{props.maxScore}</p>
             <p>{props.lastScore}</p>
-            {/*<img src={API_URL + 'uploads/' + props.userAvatar}/>*/}
         </div>
     )
 }

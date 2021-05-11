@@ -7,11 +7,11 @@ import {Link} from "react-router-dom";
 
 const SnakeGameEnvironment = () => {
 
-    const {user: currentUser} = useSelector((state)=> state.auth)
+    const {user: currentUser} = useSelector((state) => state.auth)
 
     const dispatch = useDispatch()
 
-    useEffect(()=> {
+    useEffect(() => {
         dispatch(getSnakeGameInfo(currentUser.id))
     }, [dispatch, currentUser.id])
 
@@ -33,10 +33,11 @@ const SnakeGameEnvironment = () => {
                     </li>
                 </ul>
             </div>
-            {!isNaN(snakeGameInfo.maxScore) &&
-            <SnakeGame
-                maxScore={snakeGameInfo.maxScore}
-                lastScore={snakeGameInfo.lastScore}/>
+            {
+                !isNaN(snakeGameInfo.maxScore) &&
+                <SnakeGame
+                    maxScore={snakeGameInfo.maxScore}
+                    lastScore={snakeGameInfo.lastScore}/>
             }
         </div>
     )
