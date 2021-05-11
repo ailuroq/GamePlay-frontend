@@ -1,4 +1,4 @@
-import {GET_USER_PROFILE} from "../actions/types";
+import {GET_USER_PROFILE, SET_ALL_USERS} from "../actions/types";
 
 const initialState = {
     profileData: {
@@ -6,7 +6,9 @@ const initialState = {
         username: "",
         avatarName: ""
     },
-    isFriend: 'no'
+    isFriend: 'no',
+
+    allUsers: []
 }
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -16,6 +18,11 @@ export default function userReducer(state = initialState, action) {
                 profileData: action.payload.currentUser,
                 isFriend: action.payload.isFriend
             }
+        case SET_ALL_USERS:
+            return {
+                ...state,
+                allUsers: action.payload,
+            }
         default:
             return state
     }
@@ -24,4 +31,9 @@ export default function userReducer(state = initialState, action) {
 export const setCurrentUser = (profileData) => ({
     type: GET_USER_PROFILE,
     payload: profileData
+})
+
+export const setAllUsers = (allUsers) => ({
+    type: SET_ALL_USERS,
+    payload: allUsers
 })
