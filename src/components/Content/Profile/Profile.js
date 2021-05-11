@@ -5,9 +5,7 @@ import styles from "./Profile.module.css"
 import {useParams} from "react-router-dom";
 import getProfile from "../../../actions/profile";
 import avatar from "../../../static/avatar.jpeg"
-import Navbar from "../../Navbar/Navbar";
 import {API_URL} from "../../../constants/urlConstants";
-
 
 const Profile = () => {
     const {user: currentUser} = useSelector((state)=> state.auth)
@@ -28,9 +26,6 @@ const Profile = () => {
                     {profileData.avatarName &&
                     <img src={API_URL + 'uploads/' + profileData.avatarName} className={styles.avatar} alt=""/>
                     }
-                </div>
-                <div className={styles.navbar}>
-                    <Navbar/>
                 </div>
             </div>
             <div className={styles.wide_column}>
@@ -55,8 +50,6 @@ const Profile = () => {
                             <p>Favorite games</p>
                         </div>
                         <div className={styles.games_pict}>
-                            {/*Here is mapped props from redux (first 6),
-                            now just as example 6 images*/}
                             <div><img src={avatar} alt=""/></div>
                             <div><img src={avatar} alt=""/></div>
                             <div><img src={avatar} alt=""/></div>
@@ -66,8 +59,7 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className={styles.achievements}>
-                        {/*Here is mapped props from redux (last N achievements)*/}
-                        <div></div>
+                        <div/>
                     </div>
                 </div>
             </div>

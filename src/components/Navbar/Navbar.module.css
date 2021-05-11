@@ -1,13 +1,10 @@
 .navbar {
-    display: grid;
-    grid-area: nav;
-    grid-gap: 0;
-    background: #edeef0;
+    margin-top: 350px;
+    align-self: center;
 }
 
 .menu {
-    margin: 0;
-    padding: 0;
+    margin-top: 20px;
 }
 
 .menu li {

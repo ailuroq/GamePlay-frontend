@@ -3,7 +3,6 @@ import axios from "axios";
 import authHeader from "../services/auth-header";
 import {API_URL} from "../constants/urlConstants";
 
-
 const _getProfile = (profileData) => ({
     type: GET_PROFILE,
     payload: profileData

@@ -1,11 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {deleteUserFriend, getFriends} from "../../../actions/friends";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import {Search} from "@material-ui/icons";
 import styles from "./Friends.module.css"
 import {setCurrentPageFriends} from "../../../reducers/profile";
 import {createPages} from "./createPages";
@@ -35,9 +32,7 @@ const Friends = () => {
     const friends = useSelector(state => state.profile.friends)
     const numberOfPagesFriends = useSelector(state => state.profile.numberOfPagesFriends)
     const currentPageFriends = useSelector(state => state.profile.currentPageFriends)
-
     const {username} = useParams()
-    const [value, setValue] = useState('')
     const pages = []
     createPages(pages, numberOfPagesFriends, currentPageFriends)
 
@@ -51,20 +46,6 @@ const Friends = () => {
 
     return (
         <div>
-            <TextField
-                variant="outlined"
-                label="Поиск друзей"
-                className={classes.searchInput}
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-                InputProps={{
-                    startAdornment: (
-                        <InputAdornment position="start">
-                            <Search/>
-                        </InputAdornment>
-                    )
-                }}
-            />
             {
                 friends.map((friend, index) => {
                         return (
@@ -78,9 +59,6 @@ const Friends = () => {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {friend.email}
                                     </Typography>
-                                    <Button size="small" color="primary">
-                                        Пригласить в игру
-                                    </Button>
                                     <Button size="small" color="primary" onClick={() => handleDelete(friend.username)}>
                                         Удалить из друзей
                                     </Button>

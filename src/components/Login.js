@@ -1,7 +1,6 @@
 import React, {useState, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Redirect} from 'react-router-dom';
-
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -52,7 +51,6 @@ const Login = (props) => {
             dispatch(login(username, password))
                 .then(() => {
                     props.history.push("/u/" + username);
-                    window.location.reload();
                 })
                 .catch(() => {
                     setLoading(false);

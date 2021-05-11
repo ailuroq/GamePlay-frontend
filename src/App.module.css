@@ -48,3 +48,9 @@ label {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+.content {
+    width: 100%;
+    max-width: 1080px;
+    margin: 15px auto;
+}
