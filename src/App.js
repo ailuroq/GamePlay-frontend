@@ -2,14 +2,10 @@ import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import styles from './App.module.css'
 import "./App.module.css";
-
-import {logout} from "./actions/auth";
 import {clearMessage} from "./actions/message";
-
 import {history} from "./helpers/history";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
-import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
     const [showScroll, setShowScroll] = useState(false)
