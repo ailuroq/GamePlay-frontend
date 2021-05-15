@@ -1,11 +1,12 @@
 import Pagination from '@material-ui/lab/Pagination'
 import {useEffect, useState} from "react";
-import {getRatingTablePage} from "../../../../actions/snake-game";
 import {useDispatch, useSelector} from "react-redux";
-import RatingTableItem from "./RatingTableItem";
+import RatingTableItemMinesweeper from "./RatingTableItemMinesweeper";
+import {getMineSweeperRatingTablePage} from "../../../../actions/minesweeperGame";
 
-const RatingTable = () => {
+const RatingTableMinesweeper = () => {
     const [page, setPage] = useState(1)
+
     const handlePageChange = (event, value) => {
         setPage(value)
     }
@@ -13,20 +14,19 @@ const RatingTable = () => {
     const dispatch = useDispatch()
 
     useEffect(()=> {
-        dispatch(getRatingTablePage(page))
+        dispatch(getMineSweeperRatingTablePage(page))
     }, [page, dispatch])
 
-    const {ratingTableInfo} = useSelector(state => state.snakeGame)
+    const {ratingTableInfo} = useSelector(state => state.minesweeperGameReducer)
 
     return (
         <div>
             <div className='table'>
-                <h1>Snake game rating</h1>
+                <h1>Minesweeper game rating</h1>
                 <div className='table_header'>
                     <div>№</div>
                     <div>Username</div>
                     <div>High score</div>
-                    <div>Last score</div>
                 </div>
                 <div>
                     {ratingTableInfo.data && ratingTableInfo.data.map((item,index)=>{
@@ -39,7 +39,7 @@ const RatingTable = () => {
                         }
                         return (
                             <div>
-                                <RatingTableItem
+                                <RatingTableItemMinesweeper
                                     key={item.id}
                                     place={place}
                                     maxScore={item.maxScore}
@@ -64,4 +64,4 @@ const RatingTable = () => {
     )
 }
 
-export default RatingTable
+export default RatingTableMinesweeper

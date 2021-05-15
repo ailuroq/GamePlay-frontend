@@ -5,6 +5,8 @@ import profile from "./profile";
 import snakeGame from "./snake-game";
 import userReducer from "./user";
 import findUsersReducer from "./findUsersReducer";
+import minesweeperReducer from "./control";
+import minesweeperGameReducer from "./minesweeperGameReducer";
 
 export default combineReducers({
     auth,
@@ -12,5 +14,7 @@ export default combineReducers({
     profile,
     snakeGame,
     userReducer,
-    findUsersReducer
+    findUsersReducer,
+    minesweeperReducer,
+    minesweeperGameReducer
 });
