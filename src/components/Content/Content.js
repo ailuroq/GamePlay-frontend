@@ -11,6 +11,8 @@ import Friends from "./Friends/Friends";
 import Subscribers from "./Subscribers/Subscribers";
 import User from "./User/User";
 import FindUsers from "./FindUsers/FindUsers";
+import MinesweeperMain from "./Games/Minesweeper/minesweeperMain";
+import RatingTableMinesweeper from "./Games/Minesweeper/RatingTableMinesweeper";
 
 const Content = () => {
     return (
@@ -27,6 +29,8 @@ const Content = () => {
                 <Route path='/currentUser/:username' component={User}/>
                 <Route path='/findUsers' component={FindUsers}/>
                 <Route exact path='/snakeGame' component={SnakeGameEnvironment}/>
+                <Route exact path='/minesweeper' component={MinesweeperMain}/>
+                <Route exact path='/minesweeper/rating' component={RatingTableMinesweeper}/>
             </Switch>
         </div>
     )
