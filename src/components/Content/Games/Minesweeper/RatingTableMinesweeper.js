@@ -40,7 +40,7 @@ const RatingTableMinesweeper = () => {
                         return (
                             <div>
                                 <RatingTableItemMinesweeper
-                                    key={item.id}
+                                    key={index}
                                     place={place}
                                     maxScore={item.maxScore}
                                     lastScore={item.lastScore}

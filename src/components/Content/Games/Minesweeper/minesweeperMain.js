@@ -33,6 +33,9 @@ const MinesweeperMain = () => {
                     <li>
                         <Link onClick={handleReset}>Reset your result</Link>
                     </li>
+                    <li>
+                        <Link to='minesweeper/inviteFriendsMinesweeper'>Invite Friends</Link>
+                    </li>
                 </ul>
             </div>
             <div className="minesweeperMain">

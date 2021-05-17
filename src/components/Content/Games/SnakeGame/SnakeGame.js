@@ -32,7 +32,6 @@ class SnakeGame extends React.Component {
     }
 
     componentDidMount() {
-        console.log('hScore ' + this.state.highScore)
         this.initGame()
         window.addEventListener('keydown', this.handleKeyDown)
         this.gameLoop()
@@ -361,7 +360,6 @@ class SnakeGame extends React.Component {
     }
 
     render() {
-        // Game over
         if (this.state.isGameOver) {
             return (
                 <GameOver

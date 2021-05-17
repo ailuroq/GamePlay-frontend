@@ -40,7 +40,7 @@ const RatingTable = () => {
                         return (
                             <div>
                                 <RatingTableItem
-                                    key={item.id}
+                                    key={index}
                                     place={place}
                                     maxScore={item.maxScore}
                                     lastScore={item.lastScore}

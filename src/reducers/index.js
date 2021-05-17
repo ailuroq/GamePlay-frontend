@@ -7,6 +7,7 @@ import userReducer from "./user";
 import findUsersReducer from "./findUsersReducer";
 import minesweeperReducer from "./control";
 import minesweeperGameReducer from "./minesweeperGameReducer";
+import invitationReducer from "./invitationsReducer";
 
 export default combineReducers({
     auth,
@@ -16,5 +17,6 @@ export default combineReducers({
     userReducer,
     findUsersReducer,
     minesweeperReducer,
-    minesweeperGameReducer
+    minesweeperGameReducer,
+    invitationReducer
 });

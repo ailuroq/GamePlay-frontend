@@ -17,3 +17,9 @@ export const deleteUserFriend = (friendUsername, username) => {
         dispatch(setCurrentPageFriends(1))
     }
 }
+
+export const inviteFriend = (friendUsername, gameName) => {
+    return async () => {
+        await axios.post(`http://localhost:8000/api/invitations/sendInvitation/${friendUsername}`, {gameName: gameName}, {headers: authHeader()})
+    }
+}

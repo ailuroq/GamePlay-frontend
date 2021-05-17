@@ -32,6 +32,7 @@ const Header = () => {
     const {user: currentUser} = useSelector((state) => state.auth);
     const {profileData} = useSelector(state => state.profile)
 
+
     const dispatch = useDispatch();
 
     const logOut = () => {
@@ -47,11 +48,15 @@ const Header = () => {
                     <Grid item sm/>
                     {currentUser ? (
                         <div>
-                            <IconButton>
-                                <Badge badgeContent={3} color="primary">
+                            <IconButton
+                                component={Link}
+                                to={"/" + currentUser.username + "/invitations"}
+                            >
+                                <Badge badgeContent={profileData.invitations.length} color="primary">
                                     <ChatBubbleOutlineIcon fontSize="small"/>
                                 </Badge>
                             </IconButton>
+
                             <IconButton
                                 component={Link}
                                 to={"/" + currentUser.username + "/subscribers"}
