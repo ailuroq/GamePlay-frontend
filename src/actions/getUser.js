@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setAllUsers, setCurrentUser} from "../reducers/user";
+import {setCurrentUser} from "../reducers/user";
 import authHeader from "../services/auth-header";
 import {setCurrentPageFriends} from "../reducers/profile";
 import {setFindUsers} from "../reducers/findUsersReducer";

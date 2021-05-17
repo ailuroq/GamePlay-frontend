@@ -8,8 +8,11 @@ const initialState = {
     profileData: {
         email: "",
         username: "",
-        subscribers: []
+        subscribers: [],
+        invitations: []
     },
+
+    allFriends: [],
 
     friends: [],
     currentPageFriends: 1,
@@ -76,4 +79,3 @@ export const setCurrentPageSubscribers = (page) => ({
     type: SET_CURRENT_PAGE_SUBSCRIBERS,
     payload: page
 })
-

@@ -17,11 +17,6 @@ const Games = () => {
             title: 'Змейка',
             path: 'snakeGame'
         },
-        {
-            img: 'https://media.rawg.io/media/resize/1280/-/screenshots/4b9/4b964d9ccaa6f2851a0dbd5fbc014826.jpg',
-            title: '2048',
-            path: '2048'
-        },
     ];
 
     return (

@@ -31,6 +31,9 @@ const SnakeGameEnvironment = () => {
                     <li>
                         <Link onClick={handleReset}>Reset your result</Link>
                     </li>
+                    <li>
+                        <Link to='snake-game/inviteFriendsSnake'>Invite Friends</Link>
+                    </li>
                 </ul>
             </div>
             {
