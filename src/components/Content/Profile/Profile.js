@@ -70,7 +70,6 @@ const Profile = () => {
                         onClick={() => {
                             handleAlertDialogClose()
                             handlePhotoSubmit()
-                            window.location.reload(true);
                         }}
                         color="primary" autoFocus>
                         Изменить
