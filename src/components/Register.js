@@ -56,6 +56,7 @@ const Register = () => {
         dispatch(register(username, email, password))
             .then(() => {
                 setSuccessful(true);
+                window.location.href = '/login';
             })
             .catch(() => {
                 setSuccessful(false);
