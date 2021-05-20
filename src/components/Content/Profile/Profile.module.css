@@ -3,6 +3,7 @@
     grid-gap: 1em;
     align-items: start;
     grid-template-columns: 1fr 8fr;
+    font-size: 19px;
 }
 
 .avatar_column {
@@ -18,7 +19,7 @@
 }
 .avatar {
     margin: 0 auto;
-    max-width: 170px;
+    max-width: 150px;
 }
 
 .thin_column {
