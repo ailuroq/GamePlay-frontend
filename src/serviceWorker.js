@@ -59,10 +59,10 @@ function registerValidSW(swUrl, config) {
         .register(swUrl)
         .then(registration => {
             registration.onupdatefound = () => {
-                const installingWorker = registration.installing;   /**/
-                if (installingWorker == null) { /**/
-                    return; /**/
-                }   /**/
+                const installingWorker = registration.installing;
+                if (installingWorker == null) {
+                    return;
+                }
                 installingWorker.onstatechange = () => {
                     if (installingWorker.state === 'installed') {
                         if (navigator.serviceWorker.controller) {
@@ -75,9 +75,9 @@ function registerValidSW(swUrl, config) {
                             );
 
                             // Execute callback
-                            if (config && config.onUpdate) {    /**/
-                                config.onUpdate(registration);  /**/
-                            }   /**/
+                            if (config && config.onUpdate) {
+                                config.onUpdate(registration);
+                            }
                         } else {
                             // At this point, everything has been precached.
                             // It's the perfect time to display a
@@ -85,9 +85,9 @@ function registerValidSW(swUrl, config) {
                             console.log('Content is cached for offline use.');
 
                             // Execute callback
-                            if (config && config.onSuccess) {   /**/
-                                config.onSuccess(registration); /**/
-                            }   /**/
+                            if (config && config.onSuccess) {
+                                config.onSuccess(registration);
+                            }
                         }
                     }
                 };
