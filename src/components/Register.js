@@ -60,7 +60,7 @@ const Register = () => {
             })
             .catch(() => {
                 setSuccessful(false);
-            });
+            });             //
     }
 
 
