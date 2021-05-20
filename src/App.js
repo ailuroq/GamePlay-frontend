@@ -47,11 +47,11 @@ const App = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        history.listen((location) => {
-            dispatch(clearMessage()); // clear message when changing location
-        });
-    }, [dispatch]);
+    useEffect(() => {   /**/
+        history.listen((location) => {  /**/
+            dispatch(clearMessage()); // clear message when changing location   /**/
+        }); /**/
+    }, [dispatch]); /**/
 
     const classes = useStyles();
 
